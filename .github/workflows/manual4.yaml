@@ -5,10 +5,16 @@ on:
     branches:
       - tete
   workflow_dispatch:
+    inputs:
+        environment:
+          description: 'Environment to deploy into'
+          type: environment
+          default: 'stg'
+          required: true
 
 jobs:
   deploy:
-    name: Deploy
+    name: Deploy ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

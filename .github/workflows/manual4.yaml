@@ -2,15 +2,20 @@ name: Manual Deployment
 
 on:
   push:
-    refs:
-      - refs/heads/tete*
+    branches:
+      - tete
+  workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build and test code
+        with:
+          ref: ${{ github.event.ref }}
+      - name: Deploy
         run: |
-          # Add build and test commands here
-          echo "Building and testing code2222"
+          # Add deployment commands here
+          echo "Deploying branch ${{ github.event.ref }}"
+

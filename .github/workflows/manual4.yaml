@@ -14,7 +14,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy 2 
+    name: Deploy 2 ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

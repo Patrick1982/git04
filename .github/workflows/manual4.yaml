@@ -1,21 +1,16 @@
 name: Manual Deployment
 
 on:
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: 'The branch to deploy'
-        required: true
+  push:
+    refs:
+      - refs/heads/tete*
 
 jobs:
-  deploy:
-    name: Deploy ${{ github.event.inputs.branch }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.inputs.branch }}
-      - name: Deploy
+      - name: Build and test code
         run: |
-          # Add deployment commands here
-          echo "Deploying branch ${{ github.event.inputs.branch }}"
+          # Add build and test commands here
+          echo "Building and testing code"

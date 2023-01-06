@@ -1,4 +1,4 @@
-name: Manual Deployment 4444
+name: Manual Deployment 44445
 
 on:
   push:
@@ -69,7 +69,7 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
   deploy:
-    name: Deploy to ${{ inputs.environment }}
+    name: Deploy to 555 ${{ inputs.environment }}
     if: github.event.pusher.name != 'reignmachine'
     needs:
       - get_version

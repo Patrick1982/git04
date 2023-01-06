@@ -14,7 +14,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy 2 ${{ inputs.environment }}
+    name: Deploy 2 ${{ github.event.inputs.environment }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,5 +23,5 @@ jobs:
       - name: Deploy
         run: |
           # Add deployment commands here
-          echo "Deploying branch ${{ github.event.ref }} env:${{ inputs.environment }}"
+          echo "Deploying branch ${{ github.event.ref }} env:${{ github.event.inputs.environment }}"
 

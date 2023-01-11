@@ -1,4 +1,4 @@
-name: Manual Deployment final
+name: Last
 
 on:
   workflow_dispatch:

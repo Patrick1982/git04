@@ -2,14 +2,6 @@ name: Manual2
 
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'The environment to deploy to'
-        required: true
-        options:
-          - test
-          - staging
-          - production
 
 jobs:
   deploy:

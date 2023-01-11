@@ -2,14 +2,6 @@ name: Manual2
 
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'The environment to deploy to'
-        required: true
-        options:
-          - test
-          - staging
-          - production
 
 jobs:
   deploy:
@@ -20,5 +12,5 @@ jobs:
       - name: Deploy
         run: |
           # Add deployment commands here
-          echo "Deploying to ${{ github.event.inputs.environment }}"
+          echo "Deploying"
  

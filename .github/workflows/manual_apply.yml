@@ -1,0 +1,24 @@
+name: Manual Apply 2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write
+  issues: write
+
+jobs:
+  plan_apply:
+    runs-on: ubuntu-latest
+    name: Plan and apply to 
+    steps:
+      - name: Wait for approval
+        uses: trstringer/manual-approval@v1
+        timeout-minutes: 10
+        with:
+          secret: ${{ github.TOKEN }}
+          approvers: Patrick1982 
+          issue-title: "Manual apply to recipes
+          issue-body: |
+            Terraform plan 

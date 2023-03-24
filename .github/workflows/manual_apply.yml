@@ -19,6 +19,6 @@ jobs:
         with:
           secret: ${{ github.TOKEN }}
           approvers: Patrick1982 
-          issue-title: "Manual apply to recipes
+          issue-title: "Manual apply to recipes"
           issue-body: |
             Terraform plan 
